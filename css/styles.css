@@ -620,7 +620,7 @@ address {
   left: 50%;
   width: 528px;
   height: 581px;
-  padding: 8px;
+  padding: 40px;
   background-color: var(--background-color);
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -630,9 +630,11 @@ address {
 }
 .modal-btn {
   display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
   padding: 6px;
-  margin-left: auto;
-  margin-bottom: 2px;
+
   border: 1px solid var(--modal-btn-color);
   border-radius: 50%;
   background-color: var(--background-color);
@@ -655,18 +657,13 @@ address {
 
 .contact-title {
   margin-bottom: 12px;
-  margin-left: 33px;
-  margin-right: 31px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
   color: var(--title--color);
 }
-.blok-contact {
-  padding-left: 33px;
-  padding-right: 31px;
-}
+
 .blok-contact label {
   position: relative;
   display: block;
@@ -681,8 +678,8 @@ address {
   border-color: var(--accent-color);
   fill: var(--accent-color);
 }
-.blok-contact input:focus-within + .icon-checkbox,
-.blok-contact input:hover + .icon-checkbox {
+.blok-contact input:focus-within + .checkbox-icon,
+.blok-contact input:hover + .checkbox-icon {
   border-color: var(--accent-color);
   cursor: pointer;
 }
@@ -693,11 +690,6 @@ address {
   cursor: pointer;
   fill: var(--accent-color);
 }
-/* .blok-contact input:focus-within + .icon-checkbox {
-  border-color: var(--logo-top-color);
-  cursor: pointer;
-  background-color: var(--accent-color);
-} */
 
 .blok-contact input,
 .blok-contact textarea {
@@ -708,7 +700,6 @@ address {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .blok-contact input {
-  margin-bottom: 10px;
   padding-left: 42px;
   height: 40px;
 }
@@ -763,23 +754,31 @@ address {
   left: 12px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-checkbox {
+.checkbox-icon {
   display: block;
   position: absolute;
-  top: 50%;
-  left: -19px;
-  transform: translate(-50%, -50%);
+  top: 4px;
+  left: -23px;
+  width: 16px;
+  height: 15px;
   border: 2px solid var(--logo-top-color);
   border-radius: 2px;
-  fill: var(--background-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  transition-property: background-color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox:checked + .icon-checkbox {
-  fill: var(--accent-color);
-  border: none;
+.checkbox:checked + .checkbox-icon {
+  border-color: var(--accent-color);
+  border-radius: 2px;
+  background-image: url('../images/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-color: var(--accent-color);
 }
 .contact-group {
   position: relative;
+  margin-bottom: 10px;
 }
